@@ -1,0 +1,84 @@
+@import "variables.scss";
+
+body {
+  font-family: $font;
+}
+
+#title {
+  background-color: $main-color;
+  color: $chat-window;
+  width: 100vw;
+  height: 4vh;
+  padding: $padding;
+  display: flex;
+}
+
+h1 {
+  margin: auto 10px;
+}
+
+input {
+  width: 30%;
+  border: none;
+  border-radius: 5%;
+  background-color: $users;
+}
+
+button {
+  font-family: $font;
+  margin: auto 5px;
+  padding: $padding;
+  border: none;
+  border-radius: 15%;
+}
+
+.sort {
+  background-color: $sort;
+  color: $chat-window;
+}
+
+.main-window {
+  height: 80vh;
+  position: relative;
+}
+
+#chat {
+  background-color: $chat-window;
+  height: 80vh;
+  margin-left: 10px;
+  position: absolute;
+  left: 0;
+}
+
+li {
+  padding: $padding;
+}
+
+p {
+  padding: $padding;
+}
+
+#users {
+  width: 33%;
+  height: 80vh;
+  background-color: $users;
+  right: 0;
+  position: absolute;
+}
+
+.logged-in {
+  background-color: $login;
+  color: $chat-window;
+  width: 100vw;
+  height: 4vh;
+  padding: $padding;
+}
+
+.type-here {
+  font-family: $font;
+  background-color: $main-color;
+  width: 100vw;
+  height: 4vh;
+  padding: $padding;
+  display: inline-block;
+}
