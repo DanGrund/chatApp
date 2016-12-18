@@ -83,4 +83,8 @@ p {
   height: 4vh;
   padding: $padding;
   display: inline-block;
+  span{
+    color: $chat-window;
+    padding: $padding;
+  }
 }
