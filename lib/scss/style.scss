@@ -10,35 +10,61 @@ body {
   width: 100vw;
   height: 4vh;
   padding: 5px;
-  display: inline-block;
-  //
-  // #sortUp: {
-  //   background-color: $sort;
-  //   font-family: $font;
-  // }
-  //
-  // #sortDown: {
-  //   background-color: $sort;
-  //   font-family: $font;
-  // }
+  display: flex;
+}
+
+h1 {
+  margin: auto 10px;
+}
+
+input {
+  width: 30%;
+  border: none;
+  border-radius: 5%;
+  background-color: $users;
+}
+
+button {
+  font-family: $font;
+  margin: auto 5px;
+  padding: 5px;
+  border: none;
+  border-radius: 15%;
+}
+
+.sort {
+  background-color: $sort;
+  color: $chat-window;
 }
 
 .main-window {
   height: 80vh;
-  
+  position: relative;
+}
 
-  #chat {
-    background-color: $chat-window;
-    width: 70vw;
-    margin-left: 10px;
-    left: 0;
-  }
+#chat {
+  background-color: $chat-window;
+  // width: 67%;
+  margin-left: 10px;
+  left: 0;
+  position: absolute;
+  margin-top: 10px;
+}
 
-  #users {
-    width: 30vw;
-    background-color: $users;
-    right: 0;
-  }
+li {
+  padding: 5px;
+}
+
+p {
+  padding: 3px;
+}
+
+#users {
+  width: 33%;
+  height: 80vh;
+  background-color: $users;
+  right: 0;
+  position: absolute;
 }
 
 
