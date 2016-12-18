@@ -1,7 +1,60 @@
 @import "variables.scss";
 
-
 body {
-  font-family: 'Fira Sans', sans-serif;
-  background: $chat-window;
+  font-family: $font;
+}
+
+#title {
+  background-color: $main-color;
+  color: $chat-window;
+  width: 100vw;
+  height: 4vh;
+  padding: 5px;
+  display: inline-block;
+  //
+  // #sortUp: {
+  //   background-color: $sort;
+  //   font-family: $font;
+  // }
+  //
+  // #sortDown: {
+  //   background-color: $sort;
+  //   font-family: $font;
+  // }
+}
+
+.main-window {
+  height: 80vh;
+  
+
+  #chat {
+    background-color: $chat-window;
+    width: 70vw;
+    margin-left: 10px;
+    left: 0;
+  }
+
+  #users {
+    width: 30vw;
+    background-color: $users;
+    right: 0;
+  }
+}
+
+
+.logged-in {
+  background-color: $login;
+  color: $chat-window;
+  width: 100vw;
+  height: 4vh;
+  padding: 5px;
+}
+
+.type-here {
+  font-family: $font;
+  background-color: $main-color;
+  width: 100vw;
+  height: 4vh;
+  padding: 5px;
+  display: inline-block;
 }
