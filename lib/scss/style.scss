@@ -8,7 +8,7 @@ body {
   background-color: $main-color;
   color: $chat-window;
   width: 100vw;
-  height: 4vh;
+  height: $infobar;
   padding: $padding;
   display: flex;
 }
@@ -19,22 +19,10 @@ h1 {
 
 input {
   width: 30%;
+  height: 20px;
   border: none;
   border-radius: 5%;
   background-color: $users;
-}
-
-button {
-  font-family: $font;
-  margin: auto 5px;
-  padding: $padding;
-  border: none;
-  border-radius: 15%;
-}
-
-.sort {
-  background-color: $sort;
-  color: $chat-window;
 }
 
 .main-window {
@@ -50,6 +38,14 @@ button {
   left: 0;
   width: 67%;
   overflow: scroll;
+}
+
+#date {
+  color: $date;
+}
+
+#userId {
+  color: $name;
 }
 
 li {
@@ -72,7 +68,7 @@ p {
   background-color: $login;
   color: $chat-window;
   width: 100vw;
-  height: 4vh;
+  height: $infobar;
   padding: $padding;
 }
 
@@ -80,7 +76,28 @@ p {
   font-family: $font;
   background-color: $main-color;
   width: 100vw;
-  height: 4vh;
+  height: $infobar;
   padding: $padding;
-  display: inline-block;
+  display: flex;
+}
+
+button {
+  font-family: $font;
+  color: $chat-window;
+  margin: auto 5px;
+  padding: $padding;
+  border: none;
+  border-radius: 15%;
+}
+
+.sort {
+  background-color: $sort;
+}
+
+.submit, #signin {
+  background-color: $submit;
+}
+
+.clear, #signout {
+  background-color: $clear;
 }
