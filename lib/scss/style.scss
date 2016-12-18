@@ -44,19 +44,18 @@ button {
 
 #chat {
   background-color: $chat-window;
-  // width: 67%;
+  height: 80vh;
   margin-left: 10px;
-  left: 0;
   position: absolute;
-  margin-top: 10px;
+  left: 0;
 }
 
 li {
-  padding: 5px;
+  padding: 6px;
 }
 
 p {
-  padding: 3px;
+  padding: 6px;
 }
 
 #users {
