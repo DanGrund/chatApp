@@ -9,7 +9,7 @@ body {
   color: $chat-window;
   width: 100vw;
   height: 4vh;
-  padding: 5px;
+  padding: $padding;
   display: flex;
 }
 
@@ -27,7 +27,7 @@ input {
 button {
   font-family: $font;
   margin: auto 5px;
-  padding: 5px;
+  padding: $padding;
   border: none;
   border-radius: 15%;
 }
@@ -51,11 +51,11 @@ button {
 }
 
 li {
-  padding: 6px;
+  padding: $padding;
 }
 
 p {
-  padding: 6px;
+  padding: $padding;
 }
 
 #users {
@@ -72,7 +72,7 @@ p {
   color: $chat-window;
   width: 100vw;
   height: 4vh;
-  padding: 5px;
+  padding: $padding;
 }
 
 .type-here {
@@ -80,6 +80,6 @@ p {
   background-color: $main-color;
   width: 100vw;
   height: 4vh;
-  padding: 5px;
+  padding: $padding;
   display: inline-block;
 }
