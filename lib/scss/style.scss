@@ -81,6 +81,11 @@ p {
   display: flex;
 }
 
+#count {
+  color: $chat-window;
+  padding: $padding;
+}
+
 button {
   font-family: $font;
   color: $chat-window;
@@ -100,4 +105,9 @@ button {
 
 .clear, #signout {
   background-color: $clear;
+  display: inline-block;
+  span{
+    color: $chat-window;
+    padding: $padding;
+  }
 }
