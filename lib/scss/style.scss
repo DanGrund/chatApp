@@ -29,6 +29,9 @@ input {
 .main-window {
   height: 80vh;
   position: relative;
+  li, p {
+    padding: $padding;
+  }
 }
 
 #chat {
@@ -39,23 +42,13 @@ input {
   left: 0;
   width: 67%;
   overflow: scroll;
-}
-
-#date {
-  color: $date;
-}
-
-#userId {
-  color: $name;
-  font-weight: 500;
-}
-
-li {
-  padding: $padding;
-}
-
-p {
-  padding: $padding;
+  #date {
+    color: $date;
+  }
+  #userId {
+    color: $name;
+    font-weight: 500;
+  }
 }
 
 #users {
@@ -112,15 +105,22 @@ button {
 }
 
 @media screen and (max-width: 450px) {
-    .main-window {
-      width: auto;
-    }
-
     .logged-in, #users, h1{
       display: none;
     }
 
     input {
+      width: 50%;
+    }
+
+    #chat {
       width: 100%;
+      height: 100%;
+    }
+
+    .type-here, #title {
+      display: block;
+      width: 100%;
+      position: sticky;
     }
 }
