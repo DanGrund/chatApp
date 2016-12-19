@@ -12,4 +12,8 @@ describe('Application', () => {
     assert.equal(wrapper.type(), 'div');
   });
 
+  it.skip('contains a chat window', ()=> {
+    const wrapper = shallow(<Application />)
+    assert.equal(wrapper.contains(), '')
+  })
 });
