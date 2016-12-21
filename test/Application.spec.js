@@ -35,27 +35,26 @@ describe('Application', () => {
       expect(Application.prototype.componentDidMount.calledOnce).to.equal(true);
   });
 
-  it('should render messages', () => {
+  it('should save messages to state', () => {
     const wrapper = mount(<MessageBar />);
     wrapper.setState({messages: [{
       user: {
         displayName: 'Dan',
         uid: 1
       },
-      content: 'Pizza Rat'}
-      ,
+      content: 'Pizza Rat'},
       {user: {
         displayName: 'Anna',
         uid: 2
         },
       content: 'Papaya Pan'
       }]
-    })
-    expect(wrapper.state('messages').length).to.equal(2)
+    });
+    expect(wrapper.state('messages').length).to.equal(2);
   });
 
   it('should render an input field', () => {
-    const wrapper = shallow(<MessageBar />)
+    const wrapper = shallow(<MessageBar />);
     expect(wrapper.find('input')).to.have.length(1);
   });
 
@@ -67,14 +66,17 @@ describe('Application', () => {
   it('the input field should clear if user clicks clear button', () => {
     const wrapper = mount(<MessageBar />);
     const input = wrapper.find('input');
-    const characterCount = wrapper.find('#count');
     const clearButton = wrapper.find('.clear');
 
     input.simulate('change', {target: {value: 'hello'} });
     expect(wrapper.state('draftMessage')).to.equal('hello');
     clearButton.simulate('click');
     expect(wrapper.state('draftMessage')).to.equal('');
-    expect(characterCount.text()).to.equal('0');
+  });
+
+  it('should have a character counter', () => {
+    const wrapper = shallow(<MessageBar />)
+    expect(wrapper.find('#count')).to.have.length(1);
   });
 
   it('should render a submit button', () => {
@@ -94,5 +96,14 @@ describe('Application', () => {
     expect(wrapper.state('draftMessage')).to.equal('');
     expect(characterCount.text()).to.equal('0');
   });
+
+  it('should update state.draftMessage as a message is typed', () => {
+    const wrapper = mount(<MessageBar />);
+    const input = wrapper.find('input');
+
+    expect (wrapper.state('draftMessage')).to.equal('');
+    input.simulate('change', {target: {value: 'HEYYYYYYY'} });
+    expect (wrapper.state('draftMessage')).to.equal('HEYYYYYYY');
+  })
 
 });
