@@ -1,10 +1,11 @@
 import React from 'react';
-
 import { shallow, mount, render } from 'enzyme';
-import { assert } from 'chai';
+import { assert, expect } from 'chai';
 
 import Application from '../lib/components/Application';
+import Title from '../lib/components/Title';
 import ChatWindow from '../lib/components/ChatWindow';
+import MessageBar from '../lib/components/MessageBar';
 
 describe('Application', () => {
 
@@ -13,20 +14,18 @@ describe('Application', () => {
     assert.equal(wrapper.type(), 'div');
   });
 
-  it.skip('contains a chat window', () => {
-    const wrapper = shallow(<Application />)
-    assert.equal(wrapper.contains(<ChatWindow />), true);
-  });
-
-  it('is able to append a new message to the screen', () => {
-    var spy = sinon.spy(addNewMessage)
-    assert.isFunction(wrapper.contains(addNewMessage),
-
-    // const wrapper = shallow(<Application />);
-  });
-
-  it.skip('can get a user array', () => {
+  it('should render a <Title /> component', () => {
     const wrapper = shallow(<Application />);
-    assert.isFunction(wrapper.contains(getUserArray));
+    expect(wrapper.find(Title)).to.have.length(1);
   });
+  it('should render a <ChatWindow /> component', () => {
+    const wrapper = shallow(<Application />);
+    expect(wrapper.find(ChatWindow)).to.have.length(1);
+  });
+  it('should render a <MessageBar /> component', () => {
+    const wrapper = shallow(<Application />);
+    expect(wrapper.find(MessageBar)).to.have.length(1);
+  });
+
+
 });
