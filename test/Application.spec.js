@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
 import { assert, expect } from 'chai';
+let sinon = require('sinon');
 
 import Application from '../lib/components/Application';
 import Title from '../lib/components/Title';
@@ -18,14 +19,25 @@ describe('Application', () => {
     const wrapper = shallow(<Application />);
     expect(wrapper.find(Title)).to.have.length(1);
   });
+
   it('should render a <ChatWindow /> component', () => {
     const wrapper = shallow(<Application />);
     expect(wrapper.find(ChatWindow)).to.have.length(1);
   });
+
   it('should render a <MessageBar /> component', () => {
     const wrapper = shallow(<Application />);
     expect(wrapper.find(MessageBar)).to.have.length(1);
   });
 
+  it('calls componentDidMount', () => {
+    sinon.spy(Application.prototype, 'componentDidMount');
+      const wrapper = mount(<Application />);
+      expect(Application.prototype.componentDidMount.calledOnce).to.equal(true);
+  });
 
+  it('has a function called reversing', () => {
+    const wrapper = shallow(<Application />);
+    assert.isFunction(reversing);
+  })
 });
